@@ -1,0 +1,12 @@
+{% extends "A_main/index.html" %}
+{% block title %}| LogIn {% endblock title %}
+{% block content %}
+    <div>
+        <h1>LogIn</h1>
+        <form action="{% url 'user:login' %}" method="POST">
+            {% csrf_token %}
+            {{ formulario }}
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'A_Main/index.html' %}
+{% block title %}| Libros {% endblock %}
+{%block content %}
+    <div class="contenido">
+        <ul class="principal">
+            <h1 class="titulo">
+                <a href="{% url 'contenido:libro_nuevo' %}">
+                    Libros
+                </a>
+            </h1>
+            {% for libro_list in lista_libros %}
+                <li class="lista">
+                    <a href="{% url 'contenido:detalle_libro' libro_list.id %}">
+                        {{libro_list.titulo}} - {{libro_list.autor}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
